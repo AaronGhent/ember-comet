@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<script src="../bower_components/handlebars/handlebars.js"></script>
+		<script src="../bower_components/ember/ember.js"></script>
+		<script src="../bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/cometd-namespace.js"></script>
+		<script src="../bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/cometd-json.js"></script>
+		<script src="../bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/Utils.js"></script>
+		<script src="../bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/TransportRegistry.js"></script>
+		<script src="../bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/Transport.js"></script>
+		<script src="../bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/RequestTransport.js"></script>
+		<script src="../bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/LongPollingTransport.js"></script>
+		<script src="../bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/CallbackPollingTransport.js"></script>
+		<script src="../bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/WebSocketTransport.js"></script>
+		<script src="../bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/CometD.js"></script>
+		<script src="../bower_components/cometd-jquery/cometd-javascript/jquery/src/main/webapp/jquery/jquery.cometd.js"></script>
+
+		<script src="../dist/ember-comet.js"></script>
+		<script>
+			App = Ember.Application.create({
+
+				EmberComet: EmberComet.extend({
+					url: 'http://localhost:4242/cometd/cometd/',
+					logLevel: 'info',
+					controllers: ['cats']
+				})
+
+			});
+
+			App.CatsController = Ember.Controller.extend({
+	
+				channels: {
+					meow: function(data) {
+						console.log('meow:', data);
+					},
+					eat: 'eatsSome',
+					thirdChannelName: [
+						'eatsSome', 
+						function(data) {
+							console.log('thirdChannel:', data);
+						}
+					]
+				},
+
+				eatsSome: function(data) {
+					console.log('eatsSome:', data);
+				},
+
+				alsoYouCanDoThis: function() {
+					this.comet.subscribe('meow', eatsSome);
+					this.comet.publish('meow', { yawn: 'epic yawn' });
+					this.comet.publish('eat', 'caeks');
+					// this.comet.unsubscribe('meow');
+				}
+
+			});
+
+		</script>
+	</head>
+</html>

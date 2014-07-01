@@ -9,9 +9,9 @@ _____________________
 	$ bower install ember-comet
 
 ```html
-<script src="/bower_components/jquery.js"></script>
-<script src="/bower_components/handlebars.js"></script>
-<script src="/bower_components/ember.js"></script>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/handlebars/handlebars.js"></script>
+<script src="/bower_components/ember/ember.js"></script>
 <script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/cometd-namespace.js"></script>
 <script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/cometd-json.js"></script>
 <script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/Utils.js"></script>
@@ -32,7 +32,7 @@ First of all you need to bootstrap the module, which is done very much the same 
 In your Ember.Application you need to configure EmberComet by defining the url and the controllers and routes (not defined in the example) capable of responding to Comet channels.
 
 ````js
-window.App = Ember.Application.create({
+App = Ember.Application.create({
 
     EmberComet: EmberComet.extend({
         url: 'http://localhost:4242/cometd/cometd/',
@@ -70,7 +70,7 @@ App.CatsController = Ember.Controller.extend({
 	},
 
 	alsoYouCanDoThis: function() {
-		this.comet.subscribe('meow', eatsSome');
+		this.comet.subscribe('meow', eatsSome);
 		this.comet.publish('meow', { yawn: 'epic yawn' });
 		this.comet.publish('eat', 'caeks');
 		// this.comet.unsubscribe('meow');
@@ -81,7 +81,6 @@ App.CatsController = Ember.Controller.extend({
 
 #### TODO
 
-- Example HTML
 - Unit tests
 - More documentation
 - Jetty server example setup
