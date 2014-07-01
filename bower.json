@@ -1,0 +1,31 @@
+{
+  "name": "ember-comet",
+  "main": "ember-comet.js",
+  "version": "0.1",
+  "homepage": "https://github.com/AaronGhent/ember-comet",
+  "authors": [
+    "Aaron Ghent <aaron@ghent.net.nz>"
+  ],
+  "description": "Ember intergration with the comet client over bayeux",
+  "keywords": [
+    "ember.js",
+    "ember",
+    "comet",
+    "cometd",
+    "bayeux",
+    "ember-comet"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "ember": "~1.5.1",
+    "cometd-jquery": "~3.0.0"
+  }
+}
