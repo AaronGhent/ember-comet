@@ -6,8 +6,8 @@
 /**
 * EmberComet lets you easily intergrate ember with cometd services over the bayeux protocol
 *
-* @class Comet
-* @main Comet
+* @class EmberComet
+* @main EmberComet
 * @constructor
 */
 var EmberComet = Ember.Object.extend({
@@ -249,11 +249,23 @@ var EmberComet = Ember.Object.extend({
 		});
 	},
 
+	/**
+	* Connect callback for comet called when a connect is detected
+	*
+	* @method _connect
+	* @private
+	*/
 	_connect: function(message) {
 		Ember.Logger.debug('[EmberComet] connected:', message);
 		this.set('connected', true);
 	},
 
+	/**
+	* Disconnect callback for comet called when a disconnect is detected
+	*
+	* @method _disconnect
+	* @private
+	*/
 	_disconnect: function(message) {
 		Ember.Logger.debug('[EmberComet] disconnected:', message);
 		this.set('connected', false);
@@ -328,6 +340,7 @@ var EmberComet = Ember.Object.extend({
 	 *	Subscribe and object (controller or route) to all the channels defined within itself
 	 *
 	 * @method _subscribeObject
+	 * @private
 	 * @param  {Object} obj
 	 */
 	_subscribeObject: function(obj) {
