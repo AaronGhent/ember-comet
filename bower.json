@@ -1,6 +1,6 @@
 {
   "name": "ember-comet",
-  "main": "ember-comet.js",
+  "main": "dist/ember-comet.js",
   "version": "0.3",
   "homepage": "https://github.com/AaronGhent/ember-comet",
   "authors": [
@@ -17,11 +17,17 @@
   ],
   "license": "ISC",
   "ignore": [
-    "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "example",
+    "docs",
+    "yuidoc-theme-blue",
+    ".gitignore",
+    ".gitmodules",
+    "bower.json",
+    "yuidoc.json",
+    "LICENSE"
+    "README.md"
   ],
   "dependencies": {
     "jquery": "*",
