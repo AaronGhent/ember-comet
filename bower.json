@@ -1,7 +1,7 @@
 {
   "name": "ember-comet",
   "main": "dist/ember-comet.js",
-  "version": "0.3",
+  "version": "0.3.1",
   "homepage": "https://github.com/AaronGhent/ember-comet",
   "authors": [
     "Aaron Ghent <aaron@ghent.net.nz>"
