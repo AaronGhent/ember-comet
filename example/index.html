@@ -47,14 +47,17 @@
 				},
 
 				alsoYouCanDoThis: function() {
-					this.comet.subscribe('meow', eatsSome);
+					var subscription = this.comet.subscribe('meow', eatsSome);
 					this.comet.publish('meow', { yawn: 'epic yawn' });
 					this.comet.publish('eat', 'caeks');
-					// this.comet.unsubscribe('meow');
+					// this.comet.unsubscribe(subscription);
 				}
 
 			});
 
 		</script>
 	</head>
+	<body>
+		Please check the console for more infomation
+	</body>
 </html>

@@ -454,6 +454,7 @@ var EmberComet = Ember.Object.extend({
 
 		comet.disconnect();
 		Ember.Logger.log('[EmberComet] destroyed');
+	}
 });
 
 Ember.Application.initializer({
