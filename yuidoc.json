@@ -1,7 +1,7 @@
 {
 	"name": "Ember Comet",
 	"description": "Ember intergration with the comet client over bayeux",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"url": "https://github.com/AaronGhent/ember-comet",
 	"options": {
 		"themedir": "yuidoc-theme-blue",
