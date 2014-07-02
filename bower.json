@@ -26,7 +26,7 @@
     ".gitmodules",
     "bower.json",
     "yuidoc.json",
-    "LICENSE"
+    "LICENSE",
     "README.md"
   ],
   "dependencies": {
