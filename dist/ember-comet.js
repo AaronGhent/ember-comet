@@ -222,7 +222,7 @@ var EmberComet = Ember.Object.extend({
 	*/
 	unsubscribe: function(subscription) {
 		Ember.Logger.debug('[EmberComet] unsubscribe:', subscription);
-		var comet = this.get('comet');
+		var comet = this.get('_comet');
 		comet.unsubscribe(subscription.get('handle'));
 	},
 
