@@ -224,6 +224,7 @@ var EmberComet = Ember.Object.extend({
 		Ember.Logger.debug('[EmberComet] unsubscribe:', subscription);
 		var comet = this.get('_comet');
 		comet.unsubscribe(subscription.get('handle'));
+		this.get('_subscriptions').removeObject(subscription);
 	},
 
 	/**
@@ -427,6 +428,11 @@ var EmberComet = Ember.Object.extend({
 		Ember.Logger.log('[EmberComet] destroying');
 		var comet = this.get('_comet');
 
+		var subscriptions = this.get('_subscriptions').copy();
+		subscriptions.forEach(function (item) {
+			this.unsubscribe(item);
+		}, this);
+
 		var handshakeListenerHandle = this.get('_handshakeListenerHandle');
 		if (handshakeListenerHandle) {
 			comet.removeListener(handshakeListenerHandle);
@@ -441,11 +447,6 @@ var EmberComet = Ember.Object.extend({
 		if (disconnectListenerHandle) {
 			comet.removeListener(disconnectListenerHandle);
 		}
-
-		var subscriptions = this.get('_subscriptions');
-		subscriptions.forEach(function (item) {
-			comet.unsubscribe(item);
-		});
 
 		var transport = comet.getTransport();
 		if (transport) {
