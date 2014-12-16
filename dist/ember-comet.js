@@ -223,7 +223,9 @@ var EmberComet = Ember.Object.extend({
 	unsubscribe: function(subscription) {
 		Ember.Logger.debug('[EmberComet] unsubscribe:', subscription);
 		var comet = this.get('_comet');
-		comet.unsubscribe(subscription.get('handle'));
+		if (subscription.get('handle')) {
+			comet.unsubscribe(subscription.get('handle'));
+		}
 		this.get('_subscriptions').removeObject(subscription);
 	},
 
