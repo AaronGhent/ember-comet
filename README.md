@@ -16,22 +16,22 @@ Include the scripts you need (compiling all the cometd-jquery scripts included i
 Example Below
 
 ```html
-<script src="/bower_components/jquery/dist/jquery.js"></script>
-<script src="/bower_components/handlebars/handlebars.js"></script>
-<script src="/bower_components/ember/ember.js"></script>
-<script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/cometd-namespace.js"></script>
-<script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/cometd-json.js"></script>
-<script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/Utils.js"></script>
-<script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/TransportRegistry.js"></script>
-<script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/Transport.js"></script>
-<script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/RequestTransport.js"></script>
-<script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/LongPollingTransport.js"></script>
-<script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/CallbackPollingTransport.js"></script>
-<script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/WebSocketTransport.js"></script>
-<script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/CometD.js"></script>
-<script src="/bower_components/cometd-jquery/cometd-javascript/common/src/main/webapp/jquery/jquery.cometd.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/handlebars/handlebars.js"></script>
+<script src="bower_components/ember/ember.js"></script>
+<script src="bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/cometd-namespace.js"></script>
+<script src="bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/cometd-json.js"></script>
+<script src="bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/Utils.js"></script>
+<script src="bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/TransportRegistry.js"></script>
+<script src="bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/Transport.js"></script>
+<script src="bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/RequestTransport.js"></script>
+<script src="bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/LongPollingTransport.js"></script>
+<script src="bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/CallbackPollingTransport.js"></script>
+<script src="bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/WebSocketTransport.js"></script>
+<script src="bower_components/cometd-jquery/cometd-javascript/common/src/main/js/org/cometd/CometD.js"></script>
+<script src="bower_components/cometd-jquery/cometd-javascript/jquery/src/main/webapp/jquery/jquery.cometd.js"></script>
 
-<script src="/bower_components/ember-comet/dist/ember-comet.js"></script>
+<script src="bower_components/ember-comet/dist/ember-comet.js"></script>
 
 ```
 First of all you need to bootstrap the module, which is done very much the same way that Ember.DS and Ember.Router go about it.
