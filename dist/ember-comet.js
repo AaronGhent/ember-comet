@@ -152,7 +152,7 @@ var EmberComet = Ember.Object.extend({
 			} else {
 				self.unsubscribe(subscriptionHandle);
 			}
-			Em.run.later(function () {
+			Ember.run.later(function () {
 				throw exception;
 			});
 		};
