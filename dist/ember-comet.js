@@ -152,6 +152,9 @@ var EmberComet = Ember.Object.extend({
 			} else {
 				self.unsubscribe(subscriptionHandle);
 			}
+			Em.run.later(function () {
+				throw exception;
+			});
 		};
 
 		var handshakeListenerHandle = comet.addListener('/meta/handshake', self, self._handshake, self);
